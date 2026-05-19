@@ -124,6 +124,26 @@ scripts/
 
 ### 3. Создать каждый файл‑раздел (пример `pages/tasavvuf/onsoz.html`)
 
+**Точные селекторы и контент из `index.html`**
+- **ÖNSÖЗ**: копировать блок с `id="GorevDIVON"` и заголовок `id="GorevPageNameDIVON"`.
+- **MİHR VAKFI**: копировать блок с `id="GorevDIVMV"` и заголовок `id="GorevPageNameDIVMV"`.
+- **GÖREVLER**: копировать блок с `id="GorevDIVGG"` и заголовок `id="GorevPageNameDIVGG"`.
+- **VİRD**: копировать блок с `id="GorevDIVVR"` и заголовок `id="GorevPageNameDIVVR"`.
+- **ESMAÜL HÜSNA**: копировать блок с `id="GorevDIVES"` и заголовок `id="GorevPageNameDIVES"`.
+- **NAMAZ ДИРЕКТОРИ**: для каждой кнопки `NamazFunctionX` копировать блоки `id="NamazDIVX"` и заголовок `id="PageNameDIVX"`.
+- **DUA ДИРЕКТОРИ**: аналогично `DuaFunctionX` → `id="DuaDIVX"` + `id="DuaPageNameDIVX"`.
+- **ДИГЕР**: аналогично `DigerFunctionX` → `id="DigerDIVX"` + `id="DigerPageNameDIVX"`.
+
+**Пример реального контента для `onsoz.html`** (из `index.html`):
+```html
+<div class="content">
+  <p>&nbsp; &nbsp; Sevgili okuyucular, Allah ile O’nun en kıymetli yaratığı olan insan arasındaki en büyük
+  связь
+  ... (полный текст блока `GorevDIVON`)
+  </p>
+</div>
+```
+
 ```html
 <!DOCTYPE html>
 <html lang="tr">
@@ -157,54 +177,55 @@ scripts/
 
 ### 4. Обновить `Main.css`
 
-- Убедиться, что стили для кнопок применяются к элементам с классом `button`.  
-  Если в текущем CSS используется селектор `.GroupButton button`, можно добавить аналогичный стиль для `.button` или просто оставить ссылки как `<a class="button">` и добавить в CSS:
+**Копируем стили текущих кнопок и добавляем новые**
+- Скопировать стили текущих кнопок из `.GroupButton button` и применить к классу `.button`.
+- Добавить стили для гамбургер‑кнопки `.home-btn` (как показано ниже).
 
 ```css
 /* Копируем стили текущих кнопок из .GroupButton button */
 .button {
-  background-color: #21262D;
-  border: 0.05em solid #8B949E;
-  border-radius: 0.5em;
-  color: #8B949E;
-  width: 90%;
-  display: inline-block;
-  text-align: center;
-  font-size: 2.7em;
-  padding: 0.25em 0 0.25em 0;
-  margin: 0 0 0.2em 0;
-  text-decoration: none; /* для ссылок */
+   background-color: #21262D;
+   border: 0.05em solid #8B949E;
+   border-radius: 0.5em;
+   color: #8B949E;
+   width: 90%;
+   display: inline-block;
+   text-align: center;
+   font-size: 2.7em;
+   padding: 0.25em 0 0.25em 0;
+   margin: 0 0 0.2em 0;
+   text-decoration: none; /* для ссылок */
 }
 .button:hover {
-  background-color: #555;
-  color: #fff;
+   background-color: #555;
+   color: #fff;
 }
 
 /* Стили для гамбургер‑кнопки */
 .home-btn {
-  position: fixed;
-  top: 10px;
-  right: 10px; /* справа, как текущая кнопка меню */
-  background-color: #21262D;
-  border: 0.05em solid #8B949E;
-  border-radius: 0.5em;
-  color: #8B949E;
-  padding: 8px 12px;
-  font-size: 1.5em; /* примерно 24px */
-  text-decoration: none;
-  z-index: 1000;
+   position: fixed;
+   top: 10px;
+   right: 10px; /* справа, как текущая кнопка меню */
+   background-color: #21262D;
+   border: 0.05em solid #8B949E;
+   border-radius: 0.5em;
+   color: #8B949E;
+   padding: 8px 12px;
+   font-size: 1.5em; /* примерно 24px */
+   text-decoration: none;
+   z-index: 1000;
 }
 .home-btn:hover {
-  background-color: #555;
-  color: #fff;
+   background-color: #555;
+   color: #fff;
 }
 
 /* Адаптивность (пример) */
 @media (max-width: 768px) {
-  .button, .home-btn {
-    font-size: 2em;
-    padding: 6px 10px;
-  }
+   .button, .home-btn {
+     font-size: 2em;
+     padding: 6px 10px;
+   }
 }
 ```
 
