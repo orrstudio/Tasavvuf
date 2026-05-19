@@ -246,7 +246,7 @@ scripts/
 <body>
   <!-- Гамбургер‑кнопка → возвращает на index.html (меню) -->
   <a href="../index.html" class="home-btn">
-    <img src="../icons/burger.svg" alt="Menü" width="24" height="24">
+    ☰
   </a>
 
   <div class="content">
