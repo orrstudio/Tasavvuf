@@ -134,6 +134,9 @@ scripts/
 - **DUA DIRECTORIES**: similarly `DuaFunctionX` → `id="DuaDIVX"` + `id="DuaPageNameDIVX"`.
 - **DİGER**: similarly `DigerFunctionX` → `id="DigerDIVX"` + `id="DigerPageNameDIVX"`.
 
+**Note about DİGER buttons**:
+- Buttons `TAKVİM`, `KUR'ÂN-I KERİM`, `SOHBETLER`, `SORU ve CEVAPLAR` open external URLs (mihr.com) – they have no internal content. Add them as regular menu links (`<a href="URL" target="_blank" rel="noopener noreferrer">`) so clicking opens the external site in a new window.
+
 **Example real content for `onsoz.html`** (from `index.html`):
 ```html
 <div class="content">
@@ -158,7 +161,8 @@ scripts/
 <body>
   <!-- Hamburger button → returns to index.html (menu) -->
   <a href="../index.html" class="home-btn">
-    <img src="../icons/burger.svg" alt="Menü" width="24" height="24">
+    <!-- Hamburger icon – Unicode character ☰ instead of SVG -->
+    ☰
   </a>
 
   <div class="content">
@@ -256,7 +260,7 @@ scripts/
 ```
 
 > **Content of about.html** – copy information from footer of current `index.html` (if any) or create a new page with site information, contacts, etc.
-> **Important**: all text – in Turkish.
+> **Note about resources**: if `fonts/` and `scripts/` folders don't exist, create them. File `date.js` is created only if it is actually needed for functionality.
 
 ### 6. Testing
 - Open each page (`pages/**/*.html`) in browser.
