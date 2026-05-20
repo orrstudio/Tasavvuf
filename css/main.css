@@ -82,19 +82,19 @@ td {
 }
 
 .menuBTN {
-  color: #58A6FF;
+  color: #58A6FF !important;
   background-color: #21262D;
   display: inline-block;
   border: solid 0.05em #58A6FF;
   border-radius: 0.3em;
   text-align: center;
-  font-size: 3em;
+  font-size: 3.5em;
   text-decoration: none !important;
   padding: 0 0.2em;
   line-height: 1.1;
   box-shadow: none !important;
+  cursor: pointer;
 }
-
 a.button,
 .button,
 .GroupButton button {
