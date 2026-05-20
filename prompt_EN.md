@@ -49,9 +49,9 @@ All pages in `pages/` must follow this exact structure to ensure consistency.
         <!-- Persistent Navigation: Original .menuBTN style -->
         <div class="navbarDiv">
             <nav class="navbar">
-                <a href="../../index.html" class="menuBTN">
-                    &nbsp;<i class="bi bi-list"></i>&nbsp;
-                </a>
+                <button class="menuBTN" onclick="window.location.href='../../index.html'">
+                    <i class="bi bi-list"></i>
+                </button>
             </nav>
         </div>
 
@@ -69,27 +69,30 @@ All pages in `pages/` must follow this exact structure to ensure consistency.
 ```
 
 ### 2. Menu Transformation (index.html)
-Convert JavaScript-driven buttons into standard HTML links.
+Convert JavaScript-driven visibility toggles into direct page navigation using buttons. 
+
+**Definitive Navigation Method (To avoid stubborn browser underlines):**
+Use a standard `<button>` with a `window.location.href` trigger. **DO NOT** wrap buttons in `<a>` tags, as this causes unremovable underlines in many browsers.
 
 **Before (Current):**
 ```html
 <button onclick="GorevFunctionON()">ÖNSÖZ</button>
 ```
 
-**After (New):**
+**After (New Standard):**
 ```html
-<a href="pages/tasavvuf/onsoz.html" class="button">ÖNSÖZ</a>
+<button onclick="window.location.href='pages/tasavvuf/onsoz.html'">ÖNSÖZ</button>
 ```
-*Note: Use the `.button` class to maintain the existing visual style of the large buttons.*
+*Note: The `.button` class handles the visual style, and the `onclick` handles the multi-page navigation.*
 
 ### 3. Path Management
-All resource paths (images, CSS, JS) must be adjusted based on the directory depth.
-
-| File Location | Path to CSS/Pict | Path to Home |
-| :--- | :--- | :--- |
-| `index.html` | `css/`, `pict/` | `index.html` |
-| `pages/tasavvuf/onsoz.html` | `../../css/`, `../../pict/` | `../../index.html` |
+...
 | `pages/diger/about.html` | `../../css/`, `../../pict/` | `../../index.html` |
+
+**Important CSS Requirements:**
+- **Cursor**: All buttons must have `cursor: pointer;` to feel like links.
+- **Text Decoration**: Keep `text-decoration: none;` on all button classes.
+- **Headings**: Keep standard `<a>` tags for external links in headings (to preserve original underlines).
 
 ### 4. Internal Link Migration
 The original content contains elements that trigger JavaScript functions for navigation. These MUST be converted to standard HTML links.

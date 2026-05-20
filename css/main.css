@@ -89,21 +89,37 @@ td {
   border-radius: 0.3em;
   text-align: center;
   font-size: 3em;
+  text-decoration: none !important;
+  padding: 0 0.2em;
+  line-height: 1.1;
+  box-shadow: none !important;
 }
 
+a.button,
+.button,
 .GroupButton button {
+  cursor: pointer;
   background-color: #21262D;
   border: 0.05em solid #8B949E;
   border-radius: 0.5em;
-  /*закругленные углы*/
   color: #8B949E;
   width: 90%;
-  align-items: center;
   font-size: 2.7em;
-  text-align: center;
-  padding: 0.25em 0 0.25em 0;
-  margin: 0 0 0.2em 0;
-  /*расположение от верха, правой стооны, низа и левой стооны*/
+  padding: 0.25em 0;
+  margin: 0 auto 0.2em auto;
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: normal;
+}
+
+a.button:hover,
+.button:hover,
+.GroupButton button:hover {
+  background-color: #555;
+  color: #fff;
+  text-decoration: none !important;
 }
 
 .DIVLabels {
